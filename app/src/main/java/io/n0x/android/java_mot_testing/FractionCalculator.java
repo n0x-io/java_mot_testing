@@ -5,55 +5,82 @@ import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 
-public class FractionCalculator{
+public class FractionCalculator extends BaseObservable{
 
     private static final String TAG = FractionCalculator.class.getName();
 
-    private int enumLeft;
-    private int denomLeft;
-    private int enumRight;
-    private int denomRight;
-    public int enumResult;
-    public int denomResult;
+    private String denomLeft;
+    private String enumLeft;
+    private String denomRight;
+    private String enumRight;
+    private String denomResult;
+    private String enumResult;
 
-
-    protected void doStuff() {
-          Log.d(TAG, "FractionCalculator started");
+    public FractionCalculator(){
+        Log.d(TAG, "new FractionCalculator created");
     }
 
-    public int getEnumLeft() {
-        return enumLeft;
-    }
-
-    public void setEnumLeft(int enumLeft) {
-        this.enumLeft = enumLeft;
-    }
-
-    public int getDenomLeft() {
+    /// #### GETTER AND SETTER ####
+    @Bindable
+    public String getDenomLeft() {
         return denomLeft;
     }
 
-    public void setDenomLeft(int denomLeft) {
+    public void setDenomLeft(String denomLeft) {
         this.denomLeft = denomLeft;
+        notifyPropertyChanged(BR.denomLeft);
     }
 
-    public int getEnumRight() {
-        return enumRight;
+    @Bindable
+    public String getEnumLeft() {
+        return enumLeft;
     }
 
-    public void setEnumRight(int enumRight) {
-        this.enumRight = enumRight;
+    public void setEnumLeft(String enumLeft) {
+        this.enumLeft = enumLeft;
+        notifyPropertyChanged(BR.enumLeft);
     }
 
-    public int getDenomRight() {
+    @Bindable
+    public String getDenomRight() {
         return denomRight;
     }
 
-    public void setDenomRight(int denomRight) {
+    public void setDenomRight(String denomRight) {
         this.denomRight = denomRight;
+        notifyPropertyChanged(BR.denomRight);
     }
 
-    // GETTER AND SETTER
+    @Bindable
+    public String getEnumRight() {
+        return enumRight;
+    }
 
+    public void setEnumRight(String enumRight) {
+        this.enumRight = enumRight;
+        notifyPropertyChanged(BR.enumRight);
+    }
+
+    @Bindable
+    public String getDenomResult() {
+        return denomResult;
+    }
+
+    public void setDenomResult(String denomResult) {
+        this.denomResult = denomResult;
+        notifyPropertyChanged(BR.denomResult);
+    }
+
+    @Bindable
+    public String getEnumResult() {
+        return enumResult;
+    }
+
+    public void setEnumResult(String enumResult) {
+        this.enumResult = enumResult;
+        notifyPropertyChanged(BR.enumResult);
+    }
 }
