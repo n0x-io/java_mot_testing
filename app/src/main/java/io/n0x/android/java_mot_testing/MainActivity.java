@@ -1,14 +1,19 @@
 package io.n0x.android.java_mot_testing;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import io.n0x.android.java_mot_testing.ex9.FractionCalculator;
+
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        Intent intent = new Intent(this, FractionCalculator.class);
+        startActivity(intent);
     }
 }
