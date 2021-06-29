@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Java_mot_testing">
 
-        <activity android:name=".ex9.FractionCalculator"/>
+        <activity android:name=".FractionCalculator"/>
 
         <activity android:name=".MainActivity">
             <intent-filter>
